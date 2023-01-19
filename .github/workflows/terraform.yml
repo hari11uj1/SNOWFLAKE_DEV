@@ -14,7 +14,9 @@ jobs:
   terraform_plan:
     name: 'Terraform plan'
     runs-on: ubuntu-latest
-    environment: PRODUCTION
+    env:
+      SNOWFLAKE_ACCOUNT: ${{secrets.SNOWFLAKE_ACCOUNT}}
+      SNOWFLAKE_USER: ${{secrets.SNOWFLAKE_USER}}
    
 
     # Use the Bash shell regardless  whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
