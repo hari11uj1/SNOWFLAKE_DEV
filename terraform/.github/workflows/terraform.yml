@@ -7,7 +7,7 @@ on:
   pull_request:
 
 #env:
- # ROOT_PATH: "${{github.workspace}}/terraform"
+ #  ROOT_PATH: "${{github.workspace}}/terraform"
 
 
 jobs:
