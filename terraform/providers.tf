@@ -14,7 +14,7 @@ terraform {
     organization = "SNOWFLAKE_TERRAFORM_INTIGRATION"
 
     workspaces {
-      name = "SNOWFLAKE_ENV"
+      name = "snowflake_dev"
     }
   }
 }
