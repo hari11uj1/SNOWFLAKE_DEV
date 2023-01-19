@@ -3,5 +3,5 @@
 }
 
 variable "snowflake_account" {
-  type = string
+  type =  string
 }*/
