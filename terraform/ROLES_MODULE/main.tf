@@ -16,7 +16,7 @@ resource "snowflake_role" "ROLE" {
 resource "snowflake_role_grants" "ROLE_GRANTS" {
   role_name = snowflake_role.ROLE.name
   roles = var.role_name
-  users = var.users
+  #users = var.users
 }
 
 output "ROLE" {

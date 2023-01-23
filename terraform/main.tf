@@ -27,9 +27,18 @@ module "DB_ADMIN010" {
  name = "DB_ADMIN010"
  comment = "a role for SYSADMIN inc"
  role_name = ["SYSADMIN"]
- users = [
+ /*users = [
   module.ALL_USERS_DEV001.USERS.snowflake_user10.name, 
- ]
+ ]*/
+}
+
+resource "snowflake_user_grant" "grant" {
+  user_name = module.ALL_USERS_DEV001.USERS.snowflake_user10.name
+  privilege = "MONITOR"
+
+  roles = ["DB_ADMIN010"]
+
+  with_grant_option = false
 }
 
 module "DATA_ENGG010" {
@@ -37,9 +46,18 @@ module "DATA_ENGG010" {
  name = "DATA_ENGG010"
  comment = "a role for SYSADMIN inc"
  role_name = ["DB_ADMIN010"]
- users = [
+ /*users = [
   module.ALL_USERS_DEV001.USERS.snowflake_user20.name,
- ]
+ ]*/
+}
+
+resource "snowflake_user_grant" "grant" {
+  user_name = module.ALL_USERS_DEV001.USERS.snowflake_user20.name
+  privilege = "MONITOR"
+
+  roles = ["DATA_ENGG010"]
+
+  with_grant_option = false
 }
 
 
@@ -48,9 +66,18 @@ module "DATA_LOADER010" {
  name = "DATA_LOADER010"
  comment = "a role for SYSADMIN inc"
  role_name = ["DATA_ENGG010"]
- users = [
+ /*users = [
   module.ALL_USERS_DEV001.USERS.snowflake_user30.name, 
- ]
+ ]*/
+}
+
+resource "snowflake_user_grant" "grant" {
+  user_name = module.ALL_USERS_DEV001.USERS.snowflake_user30.name
+  privilege = "MONITOR"
+
+  roles = ["DATA_LOADER010"]
+
+  with_grant_option = false
 }
 
 module "DATA_ANALYST010" {
@@ -58,9 +85,19 @@ module "DATA_ANALYST010" {
  name = "DATA_ANALYST010"
  comment = "a role for SYSADMIN inc"
  role_name = ["DB_ADMIN010"]
- users = [
+ /*users = [
   module.ALL_USERS_DEV001.USERS.snowflake_user40.name, 
- ]
+ ]*/
+}
+
+
+resource "snowflake_user_grant" "grant" {
+  user_name = module.ALL_USERS_DEV001.USERS.snowflake_user40.name
+  privilege = "MONITOR"
+
+  roles = ["DATA_ANALYST010"]
+
+  with_grant_option = false
 }
 
 module "DATA_VIZ010" {
@@ -68,9 +105,18 @@ module "DATA_VIZ010" {
  name = "DATA_VIZ010"
  comment = "a role for SYSADMIN inc"
  role_name = ["DATA_ANALYST010"]
- users = [
+ /*users = [
   module.ALL_USERS_DEV001.USERS.snowflake_user50.name,
- ]
+ ]*/
+}
+
+resource "snowflake_user_grant" "grant" {
+  user_name = module.ALL_USERS_DEV001.USERS.snowflake_user50.name
+  privilege = "MONITOR"
+
+  roles = ["DATA_VIZ010"]
+
+  with_grant_option = false
 }
   
 # will create a warehouse and asign to users a
